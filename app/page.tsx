@@ -1,9 +1,12 @@
+'use client';
+import { Button } from "@nextui-org/react";
 import Navbar from "./navbar";
 
 export default function Home() {
   return (
     <div>
       <Navbar/>
+      <Button>Test</Button>
       <div id="aboutme">
         <h1>About Me</h1>
         <p>As a dedicated Computer Science student at the University of British Columbia, I possess a robust foundation in programming languages such as Java, Python, and JavaScript. My technical proficiency is further endorsed by my role as a software developer for the Girls in Tech Club, where I focus on full stack app development with an emphasis on UI/UX design. Demonstrating leadership, I have successfully hosted two hackathons and actively engaged in tech-related events. With a passion for creating user-centered applications, I am keen to leverage these interdisciplinary skills within forward-thinking organizations. My ambition is to continuously broaden my expertise in Computer Science, contribute meaningfully to innovative projects, and explore the possibility of a progressive career within this vibrant industry.</p>
