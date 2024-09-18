@@ -30,6 +30,9 @@
 .awards{
     background-image: linear-gradient(to bottom, #480e0e, #a36f45);
 }
+.contact{
+    background-image: linear-gradient(to bottom, #a36f45, #ecaa77);
+}
 
 .job{
     display: flex;

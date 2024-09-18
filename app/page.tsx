@@ -2,7 +2,7 @@
 import Navbar from "./navbar";
 import { ReactTyped } from "react-typed";
 import styles from './styles/index.module.css'
-import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Link } from "@nextui-org/react";
 
 export default function Home() {
   return (
@@ -63,73 +63,73 @@ export default function Home() {
       </div>
       <div id="projects" className={`${styles.section} ${styles.proj}`}>
         <h1><ReactTyped strings={['Projects']} typeSpeed={50} loop /></h1>
-        
-          <Card className={styles.card}>
-            <CardHeader>
-              <h3>Club Website</h3>
-            </CardHeader>
-            <CardBody>
-              <p>Developed a website for the Girls in Tech Club that showcases events, goals, resources, and opportunites for students interested in tech at UBCO</p>
-              <Button size="sm" href="gitsuo.vercel.app">View website</Button>
-            </CardBody>
-            <CardFooter>
-                <p>ReactJS | NextJS | React Bootstrap</p>
-            </CardFooter>
-          </Card>
-          
-        
+
         <Card className={styles.card}>
-            <CardHeader>
-              <h3>Sprint Reviews</h3>
-            </CardHeader>
-            <CardBody>
-              <p>Developed a web application that streamlines the process of creating and assigning reviews for instructors, and simplifies the process of submitting and providing peer reviews for students.</p>
-              <Button size="sm" href="https://github.com/yatharth711/SprintReviewsTool">View Source Code</Button>
-            </CardBody>
-            <CardFooter>
-                <p>ReactJS | NextJS | NextUI | MySQL</p>
-            </CardFooter>
-          </Card>
-        
+          <CardHeader>
+            <h3>Club Website</h3>
+          </CardHeader>
+          <CardBody>
+            <p>Developed a website for the Girls in Tech Club that showcases events, goals, resources, and opportunites for students interested in tech at UBCO</p>
+            <Button size="sm" href="gitsuo.vercel.app">View website</Button>
+          </CardBody>
+          <CardFooter>
+            <p>ReactJS | NextJS | React Bootstrap</p>
+          </CardFooter>
+        </Card>
+
+
         <Card className={styles.card}>
-            <CardHeader>
-              <h3>Canvas Clone</h3>
-            </CardHeader>
-            <CardBody>
-              <p>Developed an E-learning platform similar to Canvas. It provides the same functionalities to users as Canvas, including assignment creation, submission, grading, and course management.</p>
-              <Button size="sm" href="https://github.com/gaurangbharti1/Vocode">View Source Code</Button>
-            </CardBody>
-            <CardFooter>
-                <p>HTML | CSS | Javascript | Flask</p>
-            </CardFooter>
-          </Card>
-        
+          <CardHeader>
+            <h3>Sprint Reviews</h3>
+          </CardHeader>
+          <CardBody>
+            <p>Developed a web application that streamlines the process of creating and assigning reviews for instructors, and simplifies the process of submitting and providing peer reviews for students.</p>
+            <Button size="sm" href="https://github.com/yatharth711/SprintReviewsTool">View Source Code</Button>
+          </CardBody>
+          <CardFooter>
+            <p>ReactJS | NextJS | NextUI | MySQL</p>
+          </CardFooter>
+        </Card>
+
         <Card className={styles.card}>
-            <CardHeader>
-              <h3>Discussion Forum</h3>
-            </CardHeader>
-            <CardBody>
-              <p>Developed full-stack discussion forum similar to Reddit. It provides users with the ability to join and create communities, create and like posts, and following and commenting abilities.</p>
-              <Button size="sm" href="https://github.com/yatharth711/myDiscussionForum">View Source Code</Button>
-            </CardBody>
-            <CardFooter>
-                <p>HTML | CSS | PHP | LAMP</p>
-            </CardFooter>
-          </Card>
-        
+          <CardHeader>
+            <h3>Canvas Clone</h3>
+          </CardHeader>
+          <CardBody>
+            <p>Developed an E-learning platform similar to Canvas. It provides the same functionalities to users as Canvas, including assignment creation, submission, grading, and course management.</p>
+            <Button size="sm" href="https://github.com/gaurangbharti1/Vocode">View Source Code</Button>
+          </CardBody>
+          <CardFooter>
+            <p>HTML | CSS | Javascript | Flask</p>
+          </CardFooter>
+        </Card>
+
         <Card className={styles.card}>
-            <CardHeader>
-              <h3>Discussion Forum</h3>
-            </CardHeader>
-            <CardBody>
-              <p>Created UI designs as a course project using Figma and following the UI/UX principles</p>
-              <Button size="sm" href="https://linktr.ee/tithi_soni">View Links to Designs</Button>
-            </CardBody>
-            <CardFooter>
-                <p>Figma</p>
-            </CardFooter>
-          </Card>
-        
+          <CardHeader>
+            <h3>Discussion Forum</h3>
+          </CardHeader>
+          <CardBody>
+            <p>Developed full-stack discussion forum similar to Reddit. It provides users with the ability to join and create communities, create and like posts, and following and commenting abilities.</p>
+            <Button size="sm" href="https://github.com/yatharth711/myDiscussionForum">View Source Code</Button>
+          </CardBody>
+          <CardFooter>
+            <p>HTML | CSS | PHP | LAMP</p>
+          </CardFooter>
+        </Card>
+
+        <Card className={styles.card}>
+          <CardHeader>
+            <h3>Discussion Forum</h3>
+          </CardHeader>
+          <CardBody>
+            <p>Created UI designs as a course project using Figma and following the UI/UX principles</p>
+            <Button size="sm" href="https://linktr.ee/tithi_soni">View Links to Designs</Button>
+          </CardBody>
+          <CardFooter>
+            <p>Figma</p>
+          </CardFooter>
+        </Card>
+
       </div>
       <div id="skills" className={`${styles.section} ${styles.skills}`}>
         <h1><ReactTyped strings={['Skills']} typeSpeed={50} loop /></h1>
@@ -168,17 +168,26 @@ export default function Home() {
         <h1><ReactTyped strings={['Awards']} typeSpeed={50} loop /></h1>
         <div className={styles.job}>
           <div className="flex justify-between">
-          <h3>Go Global International Learning Programs Award</h3>
-          <p>University of British Columbia- Okanagan</p>
+            <h3>Go Global International Learning Programs Award</h3>
+            <p>University of British Columbia- Okanagan</p>
+          </div>
+          <div className="flex justify-between">
+            <h3>Dean&apos;s Entrance Scholarship</h3>
+            <p>Macewan University</p>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <h3>Dean&apos;s Entrance Scholarship</h3>
-          <p>Macewan University</p>
-        </div>
-        </div>
-        
-      </div>
 
+        
+
+      </div>
+      <div className={`${styles.section} ${styles.contact}`}>
+        <h2><ReactTyped strings={['Contact Information']} typeSpeed={50} loop /></h2>
+        <p>Email: tithi2k3@gmail.com</p>
+        <Link href="https://github.com/tithisoni">Github</Link>
+        <Link href="https://linkedin.com/in/tithi-soni">Linkedin</Link>
+        
+        </div>
+      
     </div>
   );
 }
