@@ -1,44 +1,72 @@
-// import { useState } from "react"
-// import { Link } from "react-scroll/modules"
-// import { usePathname } from "next/navigation"
-// import { useTheme } from "next-themes"
-// import { RiMoonFill, RiSunLine } from "react-icons/ri"
-// import { IoMdMenu, IoMdClose } from "react-icons/io"
+import React, { useState } from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
 
-// interface NavItem {
-//   label: string
-//   page: string
-// }
+export default function MainNavbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems = [
+    { label: "About Me", page: "aboutme" },
+    { label: "Experience", page: "experience" },
+    { label: "Projects", page: "projects" },
+    { label: "Skills", page: "skills" },
+    { label: "Awards", page: "awards" },
+  ];
 
-// const NAV_ITEMS: Array<NavItem> = [
-//   {
-//     label: "Home",
-//     page: "home",
-//   },
-//   {
-//     label: "About",
-//     page: "about",
-//   },
-//   {
-//     label: "Projects",
-//     page: "projects",
-//   },
-// ]
+  const handleLinkClick = () => {
+    // Close the menu after clicking a link on mobile view
+    setIsMenuOpen(false);
+  };
 
-export default function Navbar() {
-//   const { systemTheme, theme, setTheme } = useTheme()
-//   const currentTheme = theme === "system" ? systemTheme : theme
-//   const pathname = usePathname()
-//   const [navbar, setNavbar] = useState(false)
   return (
     <header>
-      <nav className="flex flex-row">
-        <a href="#aboutme">About me</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#awards">Awards</a>
-        <a href="#skills">Skills</a>
-      </nav>
+      <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+        <NavbarContent justify="start">
+          {/* Toggle button only visible in mobile */}
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden"
+            onClick={() => setIsMenuOpen(isMenuOpen)}
+          />
+          <NavbarBrand>
+            <p className="font-bold text-inherit">Tithi Soni</p>
+          </NavbarBrand>
+        </NavbarContent>
+
+        {/* Desktop view links */}
+        <NavbarContent className="hidden sm:flex gap-4" justify="end">
+          {menuItems.map((item) => (
+            <NavbarItem key={item.page}>
+              <Link href={`#${item.page}`} color="foreground">
+                {item.label}
+              </Link>
+            </NavbarItem>
+          ))}
+        </NavbarContent>
+
+        {/* Mobile menu */}
+        <NavbarMenu>
+          {menuItems.map((item) => (
+            <NavbarMenuItem key={item.page}>
+              <Link
+                className="w-full text-foreground"
+                href={`#${item.page}`}
+                size="lg"
+                onClick={handleLinkClick}  // Close menu after click
+              >
+                {item.label}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
     </header>
-  )
+  );
 }

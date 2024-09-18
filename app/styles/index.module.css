@@ -1,0 +1,46 @@
+.section{
+    display: flex;
+    min-height: 100vh;
+    padding: 2%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.section p, .section b{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about{
+    background-image: linear-gradient(to bottom, #050506, #0a0834);
+}
+
+.exp{
+    background-image: linear-gradient(to bottom, #0a0834, #210834);
+}
+
+.proj{
+    background-image: linear-gradient(to bottom, #210834, #340821);
+}
+
+.skills{
+    background-image: linear-gradient(to bottom, #340821, #480e0e);
+}
+
+.awards{
+    background-image: linear-gradient(to bottom, #480e0e, #a36f45);
+}
+
+.job{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 90vw;
+}
+
+.card{
+    background: #421264;
+    width: 20rem;
+    margin: 2%;
+
+}

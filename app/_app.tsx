@@ -6,7 +6,7 @@ import "./styles/globals.css";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute='class' defaultTheme='light' themes={['light', 'dark', 'instructor', 'student']}>
+      <NextThemesProvider attribute='class' defaultTheme='dark' themes={['light', 'dark']}>
         <Component {...pageProps} />
       </NextThemesProvider>        
     </NextUIProvider>
