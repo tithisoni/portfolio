@@ -3,16 +3,39 @@ import Navbar from "./navbar";
 import { ReactTyped } from "react-typed";
 import styles from './styles/index.module.css'
 import { Button, Card, CardBody, CardFooter, CardHeader, Link } from "@nextui-org/react";
+import MyCard from "./card";
+import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+import ThreeScene from "./stars";
+import MainNavbar from "./navbar";
 
 export default function Home() {
+  
+  const projects = [
+  { name: 'Girls in Tech Website', desc: 'Developed a website for the Girls in Tech Club that showcases events, goals, resources, and opportunites for students interested in tech at UBCO.', link: 'https://gitsuo.vercel.app', linkdesc: 'View Website', stack: 'ReactJS | NextJS | React Bootstrap', index: 0 },
+
+  { name: 'Sprint Reviews', desc: 'Developed a web application that streamlines the process of creating and assigning reviews for instructors, and simplifies the process of submitting and providing peer reviews for students.', link: 'https://github.com/yatharth711/SprintReviewsTool', linkdesc: 'View Source Code', stack: 'ReactJS | NextJS | NextUI | MySQL', index: 1 },
+
+  { name: 'Canvas Clone', desc: 'Developed an E-learning platform similar to Canvas. It provides the same functionalities to users as Canvas, including assignment creation, submission, grading, and course management.', link: 'https://github.com/gaurangbharti1/Vocode', linkdesc: 'View Source Code', stack: 'HTML | CSS | Javascript | Flask', index: 2 },
+
+  { name: 'Discussion Forum', desc: 'Developed full-stack discussion forum similar to Reddit using LAMP stack. It provides users with the ability to join and create communities, create and like posts, and following and commenting abilities.', link: 'https://github.com/yatharth711/myDiscussionForum', linkdesc: 'View Source Code', stack: 'HTML | CSS | PHP | Javascript', index: 3 },
+
+  { name: 'Design Portfolio', desc: 'Created UI designs as a course project using Figma and following the UI/UX principles', link: 'https://linktr.ee/tithi_soni', linkdesc: 'View Portfolio', stack: 'Figma', index: 4 },
+];
   return (
     <div>
       <div className=" w-[100%] fixed z-10">
-        <Navbar />
+        <MainNavbar/>
+        {/* <Navbar /> */}
       </div>
-      <div id="aboutme" className={`${styles.section} ${styles.about}`}>
+      <div id="aboutme" className={`${styles.section} ${styles.about}`}>        
         <h1><ReactTyped strings={['About Me']} typeSpeed={50} loop /></h1>
-        <p>As a dedicated Computer Science student at the University of British Columbia, I possess a robust foundation in programming languages such as Java, Python, and JavaScript. My technical proficiency is further endorsed by my role as a software developer for the Girls in Tech Club, where I focus on full stack app development with an emphasis on UI/UX design. Demonstrating leadership, I have successfully hosted two hackathons and actively engaged in tech-related events. With a passion for creating user-centered applications, I am keen to leverage these interdisciplinary skills within forward-thinking organizations. My ambition is to continuously broaden my expertise in Computer Science, contribute meaningfully to innovative projects, and explore the possibility of a progressive career within this vibrant industry.</p>
+        <div className='flex flex-row flex-wrap justify-center'>
+        <CldImage src="mypic" width="250" height="250" crop={{ type: 'fill', source: true }} radius="max"  alt={"sample"}/>
+        <p>As a dedicated Computer Science major from the University of British Columbia, I possess a robust foundation in programming languages such as Java, Python, and JavaScript. My technical proficiency is further endorsed by my role as a software developer for the Girls in Tech Club, where I focus on full stack app development with an emphasis on UI/UX design. Demonstrating leadership, I have successfully hosted two hackathons and actively engaged in tech-related events. With a passion for creating user-centered applications, I am keen to leverage these interdisciplinary skills within forward-thinking organizations. My ambition is to continuously broaden my expertise in Computer Science, contribute meaningfully to innovative projects, and explore the possibility of a progressive career within this vibrant industry.</p>
+       
+        </div>
+        
       </div>
       <div id="experience" className={`${styles.section} ${styles.exp}`}>
         <h1><ReactTyped strings={['Experience']} typeSpeed={50} loop /></h1>
@@ -60,25 +83,21 @@ export default function Home() {
           </div>
 
         </div>
+        
+        
       </div>
+      
       <div id="projects" className={`${styles.section} ${styles.proj}`}>
         <h1><ReactTyped strings={['Projects']} typeSpeed={50} loop /></h1>
 
-        <Card className={styles.card}>
-          <CardHeader>
-            <h3>Club Website</h3>
-          </CardHeader>
-          <CardBody>
-            <p>Developed a website for the Girls in Tech Club that showcases events, goals, resources, and opportunites for students interested in tech at UBCO</p>
-            <Button size="sm" href="gitsuo.vercel.app">View website</Button>
-          </CardBody>
-          <CardFooter>
-            <p>ReactJS | NextJS | React Bootstrap</p>
-          </CardFooter>
-        </Card>
+        <div className='flex flex-row flex-wrap justify-center items-center'>
+          {projects.map((project, index) => (
+          <MyCard key={index} name={project.name} desc={project.desc} link={project.link} linkdesc={project.linkdesc} stack={project.stack} index={index} />
+        ))}
+        </div>
 
 
-        <Card className={styles.card}>
+        {/* <Card className={styles.card}>
           <CardHeader>
             <h3>Sprint Reviews</h3>
           </CardHeader>
@@ -89,9 +108,9 @@ export default function Home() {
           <CardFooter>
             <p>ReactJS | NextJS | NextUI | MySQL</p>
           </CardFooter>
-        </Card>
+        </Card> */}
 
-        <Card className={styles.card}>
+        {/* <Card className={styles.card}>
           <CardHeader>
             <h3>Canvas Clone</h3>
           </CardHeader>
@@ -102,9 +121,9 @@ export default function Home() {
           <CardFooter>
             <p>HTML | CSS | Javascript | Flask</p>
           </CardFooter>
-        </Card>
+        </Card> */}
 
-        <Card className={styles.card}>
+        {/* <Card className={styles.card}>
           <CardHeader>
             <h3>Discussion Forum</h3>
           </CardHeader>
@@ -115,9 +134,9 @@ export default function Home() {
           <CardFooter>
             <p>HTML | CSS | PHP | LAMP</p>
           </CardFooter>
-        </Card>
+        </Card> */}
 
-        <Card className={styles.card}>
+        {/* <Card className={styles.card}>
           <CardHeader>
             <h3>Discussion Forum</h3>
           </CardHeader>
@@ -128,7 +147,7 @@ export default function Home() {
           <CardFooter>
             <p>Figma</p>
           </CardFooter>
-        </Card>
+        </Card> */}
 
       </div>
       <div id="skills" className={`${styles.section} ${styles.skills}`}>

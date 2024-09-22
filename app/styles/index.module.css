@@ -13,6 +13,8 @@
 
 .about{
     background-image: linear-gradient(to bottom, #050506, #0a0834);
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .exp{
