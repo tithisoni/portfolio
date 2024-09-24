@@ -8,7 +8,7 @@ const ThreeScene: React.FC = () => {
   useEffect(() => {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let stats: Stats;
-    let materials: THREE.PointsMaterial[] = [];
+    const materials: THREE.PointsMaterial[] = [];
     let particles: THREE.Points;
     let mouseX = 0, mouseY = 0;
     let windowHalfX = window.innerWidth / 2;
@@ -57,7 +57,7 @@ const ThreeScene: React.FC = () => {
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
       for (let i = 0; i < parameters.length; i++) {
-        const color = parameters[i][0];
+        // const color = parameters[i][0];
         const size = parameters[i][1];
 
         materials[i] = new THREE.PointsMaterial({ size });

@@ -1,12 +1,12 @@
 'use client';
-import Navbar from "./navbar";
+// import Navbar from "./navbar";
 import { ReactTyped } from "react-typed";
 import styles from './styles/index.module.css'
-import { Button, Card, CardBody, CardFooter, CardHeader, Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
 import MyCard from "./card";
-import Image from "next/image";
+// import Image from "next/image";
 import { CldImage } from "next-cloudinary";
-import ThreeScene from "./stars";
+// import ThreeScene from "./stars";
 import MainNavbar from "./navbar";
 
 export default function Home() {
